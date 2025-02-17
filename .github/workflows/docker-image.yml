@@ -1,4 +1,4 @@
-name: Build & piblish image to docker hub
+name: Build & publish image to docker hub
 
 on:
    [workflow_dispatch]
