@@ -1,0 +1,22 @@
+name: Build & piblish image to docker hub
+
+on:
+   [workflow_dispatch]
+  
+
+jobs:
+
+  publish_image:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    
+    - name: checkout
+      uses: actions/checkout@v4
+      
+    - name: Build the Docker image
+      run: docker build ./api/ -t mezozaki12/devops-qr-code-backend:latest
+  
+    - name: push image to docker hub 
+      run: docker push mezozaki12/devops-qr-code-backend:latest
